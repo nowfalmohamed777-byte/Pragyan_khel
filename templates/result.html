@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Analysis result</title>
+    <style> body { font-family: Arial, sans-serif; margin: 30px } </style>
+  </head>
+  <body>
+    <h1>Analysis result</h1>
+    {% if type == 'image' %}
+      <p>Annotated image:</p>
+      <img src="/{{ annotated }}" style="max-width:100%;height:auto;" />
+    {% else %}
+      <p>Annotated video (download or play):</p>
+      <video controls src="/{{ annotated }}" style="max-width:100%;height:auto;"></video>
+    {% endif %}
+
+    <p><a href="/{{ report }}">Download CSV report</a></p>
+    <p><a href="/">Analyze another file</a></p>
+  </body>
+</html>
